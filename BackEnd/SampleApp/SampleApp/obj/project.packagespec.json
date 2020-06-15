@@ -1,20 +1,15 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\SampleApp.csproj",
+    "projectUniqueName": "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/SampleApp.csproj",
     "projectName": "SampleApp",
-    "projectPath": "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\SampleApp.csproj",
-    "outputPath": "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\obj\\",
+    "projectPath": "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/SampleApp.csproj",
+    "outputPath": "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/obj/",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
     "sources": {
-      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-      "http://nexuswtc.ncr.com/nexus/service/local/nuget/cloud-connect-nuget/": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
@@ -48,7 +43,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.301/RuntimeIdentifierGraph.json"
     }
   }
 }

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\SampleApp.csproj": {}
+    "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/SampleApp.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\SampleApp.csproj": {
+    "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/SampleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\SampleApp.csproj",
+        "projectUniqueName": "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/SampleApp.csproj",
         "projectName": "SampleApp",
-        "projectPath": "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\SampleApp.csproj",
-        "packagesPath": "C:\\Users\\cp250246\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\SampleApp\\BackEnd\\SampleApp\\SampleApp\\obj\\",
+        "projectPath": "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/SampleApp.csproj",
+        "packagesPath": "/Users/CA185132/.nuget/packages/",
+        "outputPath": "/Users/CA185132/Desktop/clone/SampleApp/BackEnd/SampleApp/SampleApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\cp250246\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/CA185132/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nexuswtc.ncr.com/nexus/service/local/nuget/cloud-connect-nuget/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.301/RuntimeIdentifierGraph.json"
         }
       }
     }

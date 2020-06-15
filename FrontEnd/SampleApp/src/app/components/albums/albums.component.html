@@ -1,0 +1,11 @@
+<div *ngIf="user">
+<ul>
+  <li *ngFor="let album of albums"
+    [class.selected]="album === selectedAlbum"
+    (click)="onSelect(album)">
+    <span class="badge">{{album.title}}</span>
+    <app-photos  [album]="album" [onlyFirst]=true></app-photos>
+    <app-photos *ngIf="selectedAlbum && (album.id == selectedAlbum.id)" [album]="album" [onlyFirst]=false></app-photos>
+  </li>
+</ul>
+</div>
