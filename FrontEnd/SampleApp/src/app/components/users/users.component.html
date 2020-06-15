@@ -1,10 +1,9 @@
 <div>
-
 <ul>
   <li *ngFor="let user of users"
       [class.selected]="user === selectedUser"
       (click)="onSelect(user)" >
-    <span class="badge">{{user.name}}</span>
+    <span >{{user.name}}</span>
     <app-albums *ngIf="selectedUser && (user.id == selectedUser.id)" [user]="user"></app-albums>
   </li>
 </ul>

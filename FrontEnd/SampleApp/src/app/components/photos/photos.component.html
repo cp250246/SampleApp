@@ -1,10 +1,10 @@
 <div *ngIf="album">
   <ng-template ngFor let-photo [ngForOf]="photos" let-i="index" let-isFirst="first">
     <li *ngIf="onlyFirst && isFirst">
-      <img alt="thumbnail" src="{{photo.thumbnailUrl}}" >
+      <a href = "#"><img alt="thumbnail" src="{{photo.thumbnailUrl}}" ></a>
     </li>
     <li *ngIf="!onlyFirst && !isFirst">
-      <img alt="thumbnail" src="{{photo.thumbnailUrl}}" >
+      <a href ="#"><img alt="thumbnail" src="{{photo.thumbnailUrl}}" ></a>
     </li>
   </ng-template>
 

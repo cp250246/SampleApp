@@ -1,3 +1,35 @@
-.is-shown {
-  text-decoration: line-through;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background: #333;
+}
+
+div {
+  width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li img {
+  float: left;
+  margin: 10px;
+  border: 5px solid #fff;
+}
+
+li {
+  align-content: center;
+
+}
+
+li:hover {
+  color: #333333;
+}
+
+

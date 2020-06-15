@@ -1,4 +1,5 @@
 <div *ngIf="user">
+  <h2> Albums for {{user.name}} with User ID {{user.id}}</h2>
 <ul>
   <li *ngFor="let album of albums"
     [class.selected]="album === selectedAlbum"
