@@ -1,0 +1,9 @@
+<ul class="photos">
+  <p *ngFor="let photo of photos; index as i; first as isFirst"
+    [class.selected]="photo === selectedPhoto"
+    (click)="onSelect(photo)">
+    <img *ngIf="isFirst" src = "{{photo.thumbnailUrl}}">
+    <span class="badge"></span>
+    <img *ngIf="selectedPhoto && (photo.albumId == selectedPhoto.albumId) && (isFirst == false)" src = "{{photo.thumbnailUrl}}">
+  </p>
+</ul>

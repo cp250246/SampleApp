@@ -1,0 +1,5 @@
+<li *ngFor="let album of albums">
+  {{ album.title }}
+  <app-photos [album]="album"></app-photos>
+</li>
+

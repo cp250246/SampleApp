@@ -22,24 +22,46 @@ namespace SampleApp.Services
 
         public async Task<IEnumerable<Users>> GetUsers()
         {
-            var users = new List<Users>();
-            
             var request = new HttpRequestMessage(HttpMethod.Get, "users");
             var response = await _httpClient.SendAsync(request);
+            return await CheckResponse<Users>(response);
+        }
 
+        public async Task<IEnumerable<Albums>> GetAlbums(long userId)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, "albums?userId=" + userId);
+            var response = await _httpClient.SendAsync(request);
+            return await CheckResponse<Albums>(response);
+
+        }
+
+        public async Task<IEnumerable<Photos>> GetPhotos(long albumId)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, "photos?albumId=" + albumId);
+            var response = await _httpClient.SendAsync(request);
+            return await CheckResponse<Photos>(response);
+        }
+
+        public async Task<IEnumerable<T>> CheckResponse<T>(HttpResponseMessage response)
+        {
+            List<T> list = new List<T>();
             if (response.IsSuccessStatusCode)
             {
                 using var responseStream = await response.Content.ReadAsStreamAsync();
-                
+
                 var options = new JsonSerializerOptions
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 };
-                users = await JsonSerializer.DeserializeAsync
-                    <List<Users>>(responseStream, options);
+
+                list = await JsonSerializer.DeserializeAsync
+                    <List<T>>(responseStream, options);
             }
 
-            return users;
+            return list;
+
         }
+
+
     }
 }

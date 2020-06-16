@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SampleApp.Models;
@@ -8,21 +8,23 @@ namespace SampleApp.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : Controller
+
+    public class PhotoController : Controller
     {
         private readonly JsonPlaceholderClient _jsonPlaceholderClient;
 
-        public UserController(JsonPlaceholderClient jsonPlaceholderClient)
+        public PhotoController(JsonPlaceholderClient jsonPlaceholderClient)
         {
             _jsonPlaceholderClient = jsonPlaceholderClient;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Users>> Get()
+        [HttpGet  ("{albumId:long}")]
+        public async Task<IEnumerable<Photos>> Get(long albumId)
         {
-            var users = await _jsonPlaceholderClient.GetUsers();
-            return users;
+            var photos = await _jsonPlaceholderClient.GetPhotos(albumId);
+            return photos;
         }
+
 
     }
 }

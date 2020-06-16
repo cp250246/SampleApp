@@ -1,28 +1,29 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SampleApp.Models;
 using SampleApp.Services;
-
 namespace SampleApp.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : Controller
+
+    public class AlbumController : Controller
     {
         private readonly JsonPlaceholderClient _jsonPlaceholderClient;
 
-        public UserController(JsonPlaceholderClient jsonPlaceholderClient)
+        public AlbumController(JsonPlaceholderClient jsonPlaceholderClient)
         {
             _jsonPlaceholderClient = jsonPlaceholderClient;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Users>> Get()
+        [HttpGet  ("{userID:long}")]
+        public async Task<IEnumerable<Albums>> Get(long userId)
         {
-            var users = await _jsonPlaceholderClient.GetUsers();
-            return users;
+            var albums = await _jsonPlaceholderClient.GetAlbums(userId);
+            return albums;
         }
+
 
     }
 }

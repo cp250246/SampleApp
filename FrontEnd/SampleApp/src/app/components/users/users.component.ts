@@ -9,12 +9,18 @@ import { User } from 'src/Types/user';
 })
 export class UsersComponent implements OnInit {
 
-  public users: User[];
+  public users: User[]
+  public selectedUser: User;
+
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
     this.data.getUsers().subscribe(r => this.users = r);
+  }
+
+  onSelect(user: User): void {
+    this.selectedUser = user;
   }
 
 }
