@@ -7,6 +7,7 @@ import { UsersComponent } from './components/users/users.component';
 import { DataService } from './../services/data.service';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { PhotosComponent } from './components/photos/photos.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PhotosComponent } from './components/photos/photos.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

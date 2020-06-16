@@ -16,3 +16,19 @@ h3 {
   font-size: 25px;
   text-decoration: aliceblue;
 }
+
+
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #999999;
+  text-align: center;
+}
+
+a:hover {
+  background-color: darkgrey;
+}
+a:active {
+  background-color: black;
+}

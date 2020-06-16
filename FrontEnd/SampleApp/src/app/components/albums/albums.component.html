@@ -1,12 +1,12 @@
-<div *ngIf="user">
-  <h2> Albums for {{user.name}} with User ID {{user.id}}</h2>
+<div>
+  <h2> Albums for User ID {{userId}}</h2>
 <ul>
   <li *ngFor="let album of albums"
     [class.selected]="album === selectedAlbum"
     (click)="onSelect(album)">
-    <span class="badge">{{album.title}}</span>
-    <app-photos  [album]="album" [onlyFirst]=true></app-photos>
-    <app-photos *ngIf="selectedAlbum && (album.id == selectedAlbum.id)" [album]="album" [onlyFirst]=false></app-photos>
+    <span [routerLink]="['/photos-page']" [queryParams]="{albumId: album.id}" class="badge">{{album.title}}</span>
+
+
   </li>
 </ul>
 </div>

@@ -1,12 +1,9 @@
 <div>
 <ul>
-  <li *ngFor="let user of users"
-      [class.selected]="user === selectedUser"
-      (click)="onSelect(user)" >
-    <span >{{user.name}}</span>
-    <app-albums *ngIf="selectedUser && (user.id == selectedUser.id)" [user]="user"></app-albums>
+  <li *ngFor="let user of users">
+    <a [routerLink]="['/albums-page']" [queryParams]="{userId: user.id}" >{{user.name}}</a>
   </li>
 </ul>
-
-
 </div>
+
+

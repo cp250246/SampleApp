@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #333;
+  background: #999999;
 }
 
 div {
@@ -15,6 +15,7 @@ div {
 
 ul {
   list-style-type: none;
+  background: #999999;
 }
 
 li img {
@@ -33,6 +34,13 @@ li img:hover {
   -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
   box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
 }
-li {
-  align-self: center;
+
+h2 {
+  color: #999999;
+  font-family: arial, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  text-align: center;
 }

@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Album} from "../../../Types/album";
 import {DataService} from "../../../services/data.service";
 import {User} from "../../../Types/user";
+import {Photo} from "../../../Types/photo";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -9,21 +11,22 @@ import {User} from "../../../Types/user";
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
-  @Input() user: User
   public albums: Album[];
   selectedAlbum: Album;
+  public albphotos: Photo[];
+  public userId: number;
 
-  constructor(private data: DataService) {
+  constructor(private data: DataService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-      this.data.getAlbums(this.user.id).subscribe(r => this.albums = r);
+      this.route.queryParams.subscribe(params=> this.userId = params.userId)
+      this.data.getAlbums(this.userId).subscribe(r => this.albums = r);
   }
 
 
   onSelect(album: Album) {
     this.selectedAlbum= album;
-
   }
 
 

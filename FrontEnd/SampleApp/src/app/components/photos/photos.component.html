@@ -1,13 +1,16 @@
-<div *ngIf="album">
+
+<div>
+  <h2> Pictures for Album ID {{albumId}} Click the thumbnail to see all photos</h2>
+<ul>
   <ng-template ngFor let-photo [ngForOf]="photos" let-i="index" let-isFirst="first">
-    <li *ngIf="onlyFirst && isFirst">
-      <a href = "#"><img alt="thumbnail" src="{{photo.thumbnailUrl}}" ></a>
+    <li *ngIf="!showAll && isFirst" (click)="showall()">
+      <a ><img alt="thumbnail" src="{{photo.thumbnailUrl}}" ></a>
     </li>
-    <li *ngIf="!onlyFirst && !isFirst">
-      <a href ="#"><img alt="thumbnail" src="{{photo.thumbnailUrl}}" ></a>
+    <li *ngIf="showAll" (click)="showall()">
+      <a ><img alt="thumbnail" src="{{photo.thumbnailUrl}}" ></a>
     </li>
   </ng-template>
 
+</ul>
 </div>
-
 

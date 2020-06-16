@@ -7,3 +7,19 @@ h1 {
   margin-bottom: 1px;
   text-align: center;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: darkgrey;
+  padding: 1em 1.5em;
+  text-align: center;
+}
+
+a:hover {
+  background-color: darkgrey;
+}
+a:active {
+  background-color: black;
+}
