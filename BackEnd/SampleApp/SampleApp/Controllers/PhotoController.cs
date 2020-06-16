@@ -17,10 +17,10 @@ namespace SampleApp.Controllers
             _jsonPlaceholderClient = jsonPlaceholderClient;
         }
 
-        [HttpGet ("{albumID:long}")]
-        public async Task<IEnumerable<Photos>> Get(long albumID)
+        [HttpGet ("{albumId:long}")]
+        public async Task<IEnumerable<Photos>> Get(long albumId)
         {
-            var photos = await _jsonPlaceholderClient.GetPhotos(albumID);
+            var photos = await _jsonPlaceholderClient.GetPhotos(albumId);
             return photos;
         }
     }

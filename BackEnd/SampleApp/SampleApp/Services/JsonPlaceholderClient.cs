@@ -20,26 +20,27 @@ namespace SampleApp.Services
             _httpClient.BaseAddress = new Uri("https://jsonplaceholder.typicode.com");
         }
 
-        public async Task<IEnumerable<Users>> GetUsers()
-        {
-            var users = new List<Users>();
-            
-            var request = new HttpRequestMessage(HttpMethod.Get, "users");
-            var response = await _httpClient.SendAsync(request);
 
-            if (response.IsSuccessStatusCode)
-            {
+        public async Task<T> HelperFunc<T>(HttpResponseMessage response)
+        {
+ 
                 using var responseStream = await response.Content.ReadAsStreamAsync();
                 
                 var options = new JsonSerializerOptions
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 };
-                users = await JsonSerializer.DeserializeAsync
-                    <List<Users>>(responseStream, options);
-            }
-
-            return users;
+                var output = await JsonSerializer.DeserializeAsync
+                    <T>(responseStream, options);
+                return output;
+        }
+        public async Task<IEnumerable<Users>> GetUsers()
+        {
+            var users = new List<Users>();
+            
+            var request = new HttpRequestMessage(HttpMethod.Get, "users");
+            var response = await _httpClient.SendAsync(request);
+            return await HelperFunc<List<Users>>(response);
         }
         
         
@@ -49,20 +50,7 @@ namespace SampleApp.Services
             
             var request = new HttpRequestMessage(HttpMethod.Get, "albums");
             var response = await _httpClient.SendAsync(request);
-
-            if (response.IsSuccessStatusCode)
-            {
-                using var responseStream = await response.Content.ReadAsStreamAsync();
-                
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                };
-                albums = await JsonSerializer.DeserializeAsync
-                    <List<Albums>>(responseStream, options);
-            }
-
-            return albums;
+            return await HelperFunc<List<Albums>>(response);
         }
         
         public async Task<IEnumerable<Albums>> GetAlbums(long userId)
@@ -71,20 +59,7 @@ namespace SampleApp.Services
             
             var request = new HttpRequestMessage(HttpMethod.Get, "albums?userId=" + userId);
             var response = await _httpClient.SendAsync(request);
-
-            if (response.IsSuccessStatusCode)
-            {
-                using var responseStream = await response.Content.ReadAsStreamAsync();
-                
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                };
-                albums = await JsonSerializer.DeserializeAsync
-                    <List<Albums>>(responseStream, options);
-            }
-
-            return albums;
+            return await HelperFunc<List<Albums>>(response);
         }
         
         
@@ -94,20 +69,7 @@ namespace SampleApp.Services
             
             var request = new HttpRequestMessage(HttpMethod.Get, "photos?albumId=" + albumId);
             var response = await _httpClient.SendAsync(request);
-
-            if (response.IsSuccessStatusCode)
-            {
-                using var responseStream = await response.Content.ReadAsStreamAsync();
-                
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                };
-                photos = await JsonSerializer.DeserializeAsync
-                    <List<Photos>>(responseStream, options);
-            }
-
-            return photos;
+            return await HelperFunc<List<Photos>>(response);
         }
     }
 }
